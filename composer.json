@@ -1,0 +1,31 @@
+{
+    "name": "logingrupa/oc-backinstock-shopaholic-plugin",
+    "type": "october-plugin",
+    "description": "Back-in-stock notifications (grouped per subscriber) for Lovata Shopaholic using RainLab.Notify.",
+    "license": "MIT",
+    "authors": [
+        {
+        "name": "Logingrupa",
+        "email": "info@logingrupa.lv"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "october/system": "^4.0",
+        "october/rain": "^4.0",
+        "lovata/toolbox-plugin": "^2.2",
+        "lovata/shopaholic-plugin": "^1.32",
+        "rainlab/notify-plugin": "^1.2"
+    },
+    "autoload": {
+        "psr-4": {
+        "Logingrupa\\BackInStockShopaholic\\": ""
+        }
+    },
+    "extra": {
+        "october": {
+        "plugin": "Logingrupa.BackInStockShopaholic",
+        "installer-name": "backinstockshopaholic"
+        }
+    }
+}

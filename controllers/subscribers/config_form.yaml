@@ -1,0 +1,29 @@
+# Record name
+name: 'logingrupa.backinstockshopaholic::lang.subscriber.name'
+
+# Model Form Field configuration
+form: $/logingrupa/backinstockshopaholic/models/subscriber/fields.yaml
+
+# Model Class name
+modelClass: Logingrupa\BackInStockShopaholic\Models\Subscriber
+
+# Default redirect location
+defaultRedirect: logingrupa/backinstockshopaholic/subscribers
+
+# Create page
+create:
+    title: 'backend::lang.form.create_title'
+    redirect: logingrupa/backinstockshopaholic/subscribers/update/:id
+    redirectClose: logingrupa/backinstockshopaholic/subscribers
+    flashSave: 'lovata.toolbox::lang.message.create_success'
+
+# Update page
+update:
+    title: 'backend::lang.form.update_title'
+    redirect: logingrupa/backinstockshopaholic/subscribers
+    redirectClose: logingrupa/backinstockshopaholic/subscribers
+    flashSave: 'lovata.toolbox::lang.message.update_success'
+    flashDelete: 'lovata.toolbox::lang.message.delete_success'
+
+# Preview page
+preview: {  }
