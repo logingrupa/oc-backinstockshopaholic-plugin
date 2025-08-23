@@ -29,7 +29,7 @@ class Subscriber extends Model
     use TraitCached;
 
     /** @var string */
-    public $table = 'logingrupa_backinstockshopaholic_subscribers';
+    public $table = 'logingrupa_backinstock_subscribers';
     /** @var array */
     public $implement = [
         '@RainLab.Translate.Behaviors.TranslatableModel',

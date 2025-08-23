@@ -10,7 +10,7 @@ use October\Rain\Database\Updates\Migration;
  */
 class CreateTableSubscribers extends Migration
 {
-    const TABLE = 'logingrupa_backinstockshopaholic_subscribers';
+    const TABLE = 'logingrupa_backinstock_subscribers';
 
     /**
      * Apply migration
@@ -25,8 +25,16 @@ class CreateTableSubscribers extends Migration
         {
             $obTable->engine = 'InnoDB';
             $obTable->increments('id')->unsigned();
-            $obTable->string('name')->index();
-            $obTable->string('slug')->unique()->index();
+            $obTable->integer('user_id')->unsigned()->nullable()->index();
+            $obTable->string('uuid')->unique()->index();
+            $obTable->string('email')->nullable()->index();
+            $obTable->string('name')->nullable();
+            $obTable->string('locale')->nullable();
+            $obTable->string('confirm_token', 64)->nullable()->unique();
+            $obTable->string('unsub_token', 64)->nullable()->unique();
+            $obTable->timestamp('confirmed_at')->nullable()->index();
+            // One-email-per-day throttle
+            $obTable->timestamp('last_notified_at')->nullable()->index();
             $obTable->timestamps();
         });
     }
