@@ -25,9 +25,9 @@ class CreateTableSubscribers extends Migration
         {
             $obTable->engine = 'InnoDB';
             $obTable->increments('id')->unsigned();
-            $obTable->integer('user_id')->unsigned()->nullable()->index();
+            $obTable->unsignedInteger('user_id')->unique();
             $obTable->string('uuid')->unique()->index();
-            $obTable->string('email')->nullable()->index();
+            $obTable->string('email')->unique()->nullable()->index();
             $obTable->string('name')->nullable();
             $obTable->string('locale')->nullable();
             $obTable->string('confirm_token', 64)->nullable()->unique();
@@ -36,6 +36,14 @@ class CreateTableSubscribers extends Migration
             // One-email-per-day throttle
             $obTable->timestamp('last_notified_at')->nullable()->index();
             $obTable->timestamps();
+            if (Schema::hasTable('users')) {
+                $obTable->foreign('user_id', 'fk_bis_user_rl')
+                ->references('id')->on('users')->onDelete('cascade');
+            } elseif (Schema::hasTable('lovata_buddies_users')) {
+                $obTable->foreign('user_id', 'fk_bis_user_buddies')
+                ->references('id')->on('lovata_buddies_users')->onDelete('cascade');
+            }
+
         });
     }
 

@@ -1,5 +1,11 @@
 1.0.0:
     - 'Init plugin'
 1.0.1:
-    - 'Create tables.'
+    - 'Create table create table subscribers.'
     - create_table_subscribers.php
+1.0.2:
+    - 'Create tables create table offersubscribers.'
+    - create_table_offersubscribers.php
+1.0.3:
+    - 'Seed database with fake files.'
+    - seed_demo_data.php
