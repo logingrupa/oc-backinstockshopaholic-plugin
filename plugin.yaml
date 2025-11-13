@@ -4,20 +4,6 @@ plugin:
     author: Logingrupa
     icon: icon-smile-o
     homepage: ''
-navigation:
-    backinstockshopaholic-menu-main:
-        label: 'logingrupa.backinstockshopaholic::lang.menu.main'
-        url: logingrupa/backinstockshopaholic/subscribers
-        permissions:
-            - 'backinstockshopaholic-menu-*'
-        icon: icon-paw
-        sideMenu:
-            backinstockshopaholic-menu-subscribers:
-                label: 'logingrupa.backinstockshopaholic::lang.menu.subscribers'
-                url: logingrupa/backinstockshopaholic/subscribers
-                permissions:
-                    - backinstockshopaholic-menu-subscribers
-                icon: icon-paw
 permissions:
     backinstockshopaholic-menu-subscribers:
         label: 'logingrupa.backinstockshopaholic::lang.permission.subscriber'
